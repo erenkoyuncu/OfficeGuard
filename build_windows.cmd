@@ -7,6 +7,13 @@ echo OFFICEGUARD 1.0.0 - WINDOWS PRODUCT BUILD
 echo ============================================================
 echo.
 
+set "OFFICEGUARD_ICON=assets\branding\officeguard.ico"
+
+if not exist "%OFFICEGUARD_ICON%" (
+  echo ERROR: OfficeGuard icon not found: %OFFICEGUARD_ICON%
+  goto :error
+)
+
 python --version
 if errorlevel 1 goto :error
 
@@ -31,6 +38,7 @@ python -m PyInstaller ^
   --clean ^
   --onedir ^
   --console ^
+  --icon "%OFFICEGUARD_ICON%" ^
   --name OfficeGuardService ^
   --hidden-import win32timezone ^
   service.py
@@ -43,6 +51,7 @@ python -m PyInstaller ^
   --clean ^
   --onefile ^
   --windowed ^
+  --icon "%OFFICEGUARD_ICON%" ^
   --name OfficeGuardUI ^
   ui_agent.py
 if errorlevel 1 goto :error
@@ -52,6 +61,7 @@ python -m PyInstaller ^
   --clean ^
   --onefile ^
   --windowed ^
+  --icon "%OFFICEGUARD_ICON%" ^
   --name OfficeGuardAdmin ^
   admin.py
 if errorlevel 1 goto :error
@@ -62,6 +72,7 @@ python -m PyInstaller ^
   --onefile ^
   --console ^
   --uac-admin ^
+  --icon "%OFFICEGUARD_ICON%" ^
   --name OfficeGuardUninstall ^
   uninstall.py
 if errorlevel 1 goto :error
@@ -84,6 +95,7 @@ python -m PyInstaller ^
   --onefile ^
   --console ^
   --uac-admin ^
+  --icon "%OFFICEGUARD_ICON%" ^
   --name OfficeGuardSetup ^
   --add-data "payload:payload" ^
   setup.py
