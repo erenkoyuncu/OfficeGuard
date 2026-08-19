@@ -1,9 +1,23 @@
-# OfficeGuard
+<p align="center">
+  <img src="assets/branding/officeguard-banner.jpg" alt="OfficeGuard — Open-source Windows endpoint application, VPN and browser policy control" width="100%">
+</p>
 
-[![Windows Build](https://github.com/erenkoyuncu/OfficeGuard/actions/workflows/windows-build.yml/badge.svg)](https://github.com/erenkoyuncu/OfficeGuard/actions/workflows/windows-build.yml)
-[![Latest Release](https://img.shields.io/github/v/release/erenkoyuncu/OfficeGuard)](https://github.com/erenkoyuncu/OfficeGuard/releases/latest)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Windows](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-blue)](#installation)
+<p align="center">
+  <img src="assets/branding/officeguard-app-icon.png" alt="OfficeGuard logo" width="96">
+</p>
+
+<h1 align="center">OfficeGuard</h1>
+
+<p align="center">
+  Open-source Windows endpoint application, VPN and browser policy control.
+</p>
+
+<p align="center">
+  <a href="https://github.com/erenkoyuncu/OfficeGuard/actions/workflows/windows-build.yml"><img src="https://github.com/erenkoyuncu/OfficeGuard/actions/workflows/windows-build.yml/badge.svg" alt="Windows Build"></a>
+  <a href="https://github.com/erenkoyuncu/OfficeGuard/releases/latest"><img src="https://img.shields.io/github/v/release/erenkoyuncu/OfficeGuard" alt="Latest Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
+  <a href="#installation"><img src="https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-blue" alt="Windows 10 / 11"></a>
+</p>
 
 **OfficeGuard** is an open-source Windows endpoint application-control project for managed office computers.
 
@@ -186,9 +200,24 @@ The result is:
 dist\OfficeGuardSetup.exe
 ```
 
+The build embeds `assets/branding/officeguard.ico` into the Service, UI, Admin tool, Uninstaller, and Setup executable.
+
 ### Continuous Integration
 
 Every push and pull request to `main` runs the Windows build workflow in GitHub Actions. The workflow builds the Service, UI, Admin tool, Uninstaller, and final Setup executable, then uploads the Setup as a workflow artifact.
+
+## Branding
+
+Official project assets are kept under:
+
+```text
+assets/branding/
+```
+
+- `officeguard-logo.png` — full project logo
+- `officeguard-banner.jpg` — GitHub / documentation banner
+- `officeguard-app-icon.png` — compact application icon
+- `officeguard.ico` — Windows executable icon
 
 ## Security Model
 
