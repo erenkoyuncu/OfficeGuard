@@ -30,22 +30,22 @@ jobs:
       - name: Build OfficeGuard Service
         shell: cmd
         run: |
-          python -m PyInstaller --noconfirm --clean --onedir --console --name OfficeGuardService --hidden-import win32timezone service.py
+          python -m PyInstaller --noconfirm --clean --onedir --console --icon assets/branding/officeguard.ico --name OfficeGuardService --hidden-import win32timezone service.py
 
       - name: Build UI
         shell: cmd
         run: |
-          python -m PyInstaller --noconfirm --clean --onefile --windowed --name OfficeGuardUI ui_agent.py
+          python -m PyInstaller --noconfirm --clean --onefile --windowed --icon assets/branding/officeguard.ico --name OfficeGuardUI ui_agent.py
 
       - name: Build Admin
         shell: cmd
         run: |
-          python -m PyInstaller --noconfirm --clean --onefile --windowed --name OfficeGuardAdmin admin.py
+          python -m PyInstaller --noconfirm --clean --onefile --windowed --icon assets/branding/officeguard.ico --name OfficeGuardAdmin admin.py
 
       - name: Build Uninstaller
         shell: cmd
         run: |
-          python -m PyInstaller --noconfirm --clean --onefile --console --uac-admin --name OfficeGuardUninstall uninstall.py
+          python -m PyInstaller --noconfirm --clean --onefile --console --uac-admin --icon assets/branding/officeguard.ico --name OfficeGuardUninstall uninstall.py
 
       - name: Stage setup payload
         shell: cmd
@@ -62,7 +62,7 @@ jobs:
       - name: Build Setup
         shell: cmd
         run: |
-          python -m PyInstaller --noconfirm --clean --onefile --console --uac-admin --name OfficeGuardSetup --add-data "payload:payload" setup.py
+          python -m PyInstaller --noconfirm --clean --onefile --console --uac-admin --icon assets/branding/officeguard.ico --name OfficeGuardSetup --add-data "payload:payload" setup.py
 
       - name: Upload setup artifact
         uses: actions/upload-artifact@v4
