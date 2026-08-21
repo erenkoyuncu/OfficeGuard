@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/branding/officeguard-banner.jpg" alt="OfficeGuard — Open-source Windows endpoint application, VPN and browser policy control" width="100%">
+  <img src="assets/branding/officeguardbanner.png" alt="OfficeGuard — Open-source Windows endpoint application, VPN and browser policy control" width="100%">
 </p>
 
 <p align="center">
